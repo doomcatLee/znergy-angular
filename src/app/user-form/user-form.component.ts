@@ -5,13 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.css']
 })
-export class UserFormComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class UserFormComponent {
 
   registerUser(){
     alert("clicked register!");
