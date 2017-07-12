@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import { ZConsoleComponent } from './z-console/z-console.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserFormComponent
+    UserFormComponent,
+    ZConsoleComponent
   ],
   imports: [
     BrowserModule,
