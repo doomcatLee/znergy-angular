@@ -1,4 +1,17 @@
-# ZnergyAngular
+# Znergy Dev README
+
+## Commands
+* clone the repo
+* run 'npm install'
+* run 'ng serve'
+* Go to http://localhost:4200/
+
+## Once you make changes
+* git add .
+* git commit -m "good message goes here"
+* git pull
+* git push
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
