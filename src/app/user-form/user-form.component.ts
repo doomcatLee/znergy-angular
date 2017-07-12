@@ -12,4 +12,12 @@ export class UserFormComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  registerUser(){
+    alert("clicked register!");
+  }
+  loginUser(){
+    alert("clicked login!");
+  }
+
 }
