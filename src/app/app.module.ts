@@ -9,6 +9,8 @@ import { IndexComponent } from './index/index.component';
 import { routing } from './app.routing';
 import { ConsoleComponent } from './console/console.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,16 @@ import { UserRegistrationComponent } from './user-registration/user-registration
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    BrowserAnimationsModule,
+    MdButtonModule,
+    MdMenuModule,
+    MdCardModule,
+    MdToolbarModule,
+    MdIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
