@@ -1,8 +1,68 @@
 
-<nav class="navbar navbar-default navbar-fixed-top">
+<!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
+
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+    <form class="example-form">
+  <md-input-container class="example-full-width">
+    <input mdInput placeholder="Company (disabled)" disabled value="Google">
+  </md-input-container>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><md-input-container class="example-full-width">
+      <input mdInput placeholder="First name">
+    </md-input-container></td>
+    <td><md-input-container class="example-full-width">
+      <input mdInput placeholder="Long Last Name That Will Be Truncated">
+    </md-input-container></td>
+  </tr></table>
+
+  <p>
+    <md-input-container class="example-full-width">
+      <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+    </md-input-container>
+    <md-input-container class="example-full-width">
+      <textarea mdInput placeholder="Address 2"></textarea>
+    </md-input-container>
+  </p>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><md-input-container class="example-full-width">
+      <input mdInput placeholder="City">
+    </md-input-container></td>
+    <td><md-input-container class="example-full-width">
+      <input mdInput placeholder="State">
+    </md-input-container></td>
+    <td><md-input-container class="example-full-width">
+      <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+      <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+    </md-input-container></td>
+  </tr></table>
+</form>
+
+    <!-- <md-toolbar color="primary">
+
+        <span>MyCompany</span>
+        <span class="example-spacer"></span>
+        <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
+        <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
+        <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
+        <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
+
+    </md-toolbar> -->
+
+
+    <md-toolbar>
+      <span>ZNRGY</span>
+      <span class="example-spacer"></span>
+      <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon>Menu</button>
+      <!-- <span class="example-spacer"></span>
+      <button md-button [mdAboutTriggerFor]="appAbout"><md-icon>about</md-icon>About</button>
+      <span class="example-spacer"></span>
+      <button md-button [mdServicesTriggerFor]="appMenu"><md-icon>services</md-icon>Services</button>
+      <span class="example-spacer"></span>
+      <button md-button [mdPortfolioTriggerFor]="appMenu"><md-icon>portfolio</md-icon> Portfolio</button> -->
+
+      <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -17,9 +77,29 @@
         <li><a href="#pricing">PRICING</a></li>
         <li><a href="#contact">CONTACT</a></li>
       </ul>
-    </div>
-  </div>
-</nav>
+    </div> -->
+</md-toolbar>
+
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu>
+<!-- <md-About #appAbout="mdAbout">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-About>
+<md-menu #appServices="mdServices">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu>
+<md-menu #appPortfolio="mdPortfolio">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu> -->
+
+
+
+
 
 <div class="jumbotron text-center">
   <h1>Znergy</h1>

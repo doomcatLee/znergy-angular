@@ -10,7 +10,7 @@ import { routing } from './app.routing';
 import { ConsoleComponent } from './console/console.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
+import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdInputModule, MdTableModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,9 @@ import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModu
     MdMenuModule,
     MdCardModule,
     MdToolbarModule,
-    MdIconModule
+    MdIconModule,
+    MdInputModule,
+    MdTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
