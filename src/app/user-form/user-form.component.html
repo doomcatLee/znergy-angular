@@ -33,7 +33,7 @@
                   <label for="checkbox1">Remember Me</label>
                 </div>
                 <div class="col-xs-6 form-group pull-right">
-                  <input type="submit" name="login-submit" (click)="loginUser()" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                  <input type="submit" name="login-submit" routerLink="/console" (click)="loginUser()" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
                 </div>
               </form>
               <form id="register-form" action="#" method="post" role="form" style="display: none;">
@@ -64,10 +64,10 @@
         <div class="panel-heading">
           <div class="row">
             <div class="col-xs-6 tabs">
-              <a href="#" class="active" id="login-form-link" (click)="loginUser()"><div class="login">LOGIN</div></a>
+              <a class="active" id="login-form-link" routerLink="/console"><div class="login">LOGIN</div></a>
             </div>
             <div class="col-xs-6 tabs">
-              <a href="#" id="register-form-link" (click)="registerUser()"><div class="register">REGISTER</div></a>
+              <a href="#" id="register-form-link" routerLink="/userRegistration"><div class="register">REGISTER</div></a>
             </div>
           </div>
         </div>

@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { IndexComponent } from './index/index.component';
 import { routing } from './app.routing';
+import { ConsoleComponent } from './console/console.component';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserFormComponent,
-    IndexComponent
+    IndexComponent,
+    ConsoleComponent,
+    UserRegistrationComponent
   ],
   imports: [
     BrowserModule,

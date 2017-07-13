@@ -11,7 +11,6 @@ export class UserFormComponent {
     alert("clicked register!");
   }
   loginUser(){
-    alert("clicked login!");
     var username = (<HTMLInputElement>document.getElementById('username')).value;
     console.log(username);
     var xhttp = new XMLHttpRequest();
