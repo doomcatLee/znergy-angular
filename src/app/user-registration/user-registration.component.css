@@ -336,3 +336,21 @@ label {
 .container-form{
   margin-top: 5%;
 }
+
+md-card{
+  margin-top: 5%;
+}
+
+#seperateInput{
+  margin-left: 7%;
+}
+
+.button-row{
+  float: right;
+  margin-top: 50px;
+}
+
+
+.body-container{
+  width: 100%;
+}

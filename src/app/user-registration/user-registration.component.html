@@ -1,6 +1,21 @@
-<div class="container">
+
+<div class="body-container">
+<md-card>
   <form class="example-form">
     <md-input-container class="example-full-width">
+      <input mdInput placeholder="Username">
+    </md-input-container>
+
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><md-input-container class="example-full-width">
+        <input mdInput placeholder="Password">
+      </md-input-container></td>
+      <td><md-input-container id="seperateInput" class="example-full-width">
+        <input mdInput placeholder="Password Confirm">
+      </md-input-container></td>
+    </tr></table>
+
+    <md-input-container style="margin-top: 50px;" class="example-full-width">
       <input mdInput placeholder="Company">
     </md-input-container>
 
@@ -8,7 +23,7 @@
       <td><md-input-container class="example-full-width">
         <input mdInput placeholder="First name">
       </md-input-container></td>
-      <td><md-input-container class="example-full-width">
+      <td><md-input-container id="seperateInput" class="example-full-width">
         <input mdInput placeholder="Last name">
       </md-input-container></td>
     </tr></table>
@@ -26,12 +41,18 @@
       <td><md-input-container class="example-full-width">
         <input mdInput placeholder="City">
       </md-input-container></td>
-      <td><md-input-container class="example-full-width">
+      <td><md-input-container id="seperateInput" class="example-full-width">
         <input mdInput placeholder="State">
       </md-input-container></td>
-      <td><md-input-container class="example-full-width">
-        <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+      <td><md-input-container id="seperateInput" class="example-full-width">
+        <input mdInput #postalCode maxlength="5" placeholder="Postal Code">
         <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
       </md-input-container></td>
     </tr></table>
+    <div class="button-row">
+      <button md-raised-button>Cancel</button>
+      <button md-raised-button style="margin-left: 10px;">Confirm</button>
+    </div>
   </form>
+</md-card>
+</div>
