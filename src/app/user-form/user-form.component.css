@@ -251,3 +251,8 @@ label {
   border-color: transparent;
   color: #fff !important;
 }
+
+
+#account{
+  float:right;
+}
