@@ -3,6 +3,7 @@
 ## Commands
 * clone the repo
 * run 'npm install'
+* run 'npm install @angular/cdk@2.0.0-beta.8'
 * run 'ng serve'
 * Go to http://localhost:4200/
 
