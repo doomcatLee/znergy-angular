@@ -11,6 +11,7 @@ import { ConsoleComponent } from './console/console.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdInputModule, MdTableModule } from '@angular/material';
+import { GenerateUrlComponent } from './generate-url/generate-url.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModu
     UserFormComponent,
     IndexComponent,
     ConsoleComponent,
-    UserRegistrationComponent
+    UserRegistrationComponent,
+    GenerateUrlComponent
   ],
   imports: [
     BrowserModule,
