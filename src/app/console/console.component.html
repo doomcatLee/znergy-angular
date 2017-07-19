@@ -1,15 +1,18 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/console">UserName</a>
-    </div>
-  </div>
-</nav>
+
+
+<md-toolbar>
+  <span>ZNRGY</span>
+  <span class="example-spacer"></span>
+  <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon>Menu</button>
+ </md-toolbar>
+
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item> Create Table </button>
+  <button md-menu-item> Data View </button>
+  <button md-menu-item> Import/Export Data </button>
+  <button md-menu-item> Help </button>
+</md-menu>
+
 
 <div class="container-createTable">
   <app-generate-url></app-generate-url>
