@@ -16,8 +16,14 @@
       </tr></table>
 
       <md-input-container style="margin-top: 50px;" class="example-full-width">
-        <input mdInput placeholder="Company" #newCompany>
+        <input mdInput placeholder="Email" #newEmail>
       </md-input-container>
+
+      <md-input-container style="margin-top: 50px;" class="example-full-width">
+        <input mdInput placeholder="Phone number" #newPhoneNumber>
+      </md-input-container>
+
+
 
       <table class="example-full-width" cellspacing="0"><tr>
         <td><md-input-container class="example-full-width">
@@ -50,7 +56,7 @@
       </tr></table>
       <div class="button-row">
         <a routerLink="/"><button md-raised-button>Cancel</button></a>
-        <a routerLink="/console"><button (click)="submitForm(newUsername.value, newPassword.value, newPasswordConfirm.value, newCompany.value, newFirstName.value, newLastName.value, newAddress.value, newAddressTwo.value, newCity.value, newState.value, newPostalCode.value);" md-raised-button style="margin-left: 10px;">Confirm</button></a>
+        <a routerLink="/console"><button (click)="submitForm(newUsername.value, newPassword.value, newPasswordConfirm.value, newEmail.value, newPhoneNumber.value, newFirstName.value, newLastName.value, newAddress.value, newAddressTwo.value, newCity.value, newState.value, newPostalCode.value);" md-raised-button style="margin-left: 10px;">Confirm</button></a>
       </div>
     </form>
   </md-card>

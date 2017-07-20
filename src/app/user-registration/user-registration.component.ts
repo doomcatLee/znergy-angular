@@ -13,11 +13,16 @@ export class UserRegistrationComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitForm(username: string, password:string, passwordConfirm: string, company:string,firstName:string, lastName:string, address: string, addressTwo:string, city: string, state: string, postalCode: string ): void {
+  urlBuilder(){
+
+  }
+
+  submitForm(username: string, password:string, passwordConfirm: string, email:string, phoneNumber: string, firstName:string, lastName:string, address: string, addressTwo:string, city: string, state: string, postalCode: string ): void {
     console.log('username', username);
     console.log('Password', password);
     console.log('PasswordConfirm', passwordConfirm);
-    console.log('Company', company);
+    console.log('Email', email);
+    console.log('PhoneNumber', phoneNumber);
     console.log('FirstName', firstName);
     console.log('LastName', lastName);
     console.log('Address', address);
@@ -25,6 +30,12 @@ export class UserRegistrationComponent implements OnInit {
     console.log('City', city);
     console.log('State', state);
     console.log('PostalCode', postalCode);
+
+    var outputString = "https://441f7d04p3.execute-api.us-west-2.amazonaws.com/prod/register-user?" + "name=" + firstName + "+" + lastName + "&" + "email=" + email + "&" + "username=" + username + "&" + "password=" + password + "&" + "phoneNumber=" + phoneNumber;
+
+    console.log('Link', outputString);
+
+
 
   }
 
