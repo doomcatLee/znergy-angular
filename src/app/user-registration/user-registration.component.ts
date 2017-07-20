@@ -9,22 +9,20 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./user-registration.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
+  responseObject: Object;
 
-  urlOutput: string = "https://441f7d04p3.execute-api.us-west-2.amazonaws.com/prod/register-user?name=alex+lee&email=hi.there@gmail.com&username=bi&password=asdQWE123!&phoneNumber=12341234";
 
   constructor(private http: Http) {
-    this.register();
+    this.responseObject = {objects:[]};
+    this.http.get('https://441f7d04p3.execute-api.us-west-2.amazonaws.com/prod/register-user?name=Ryan+Jones&email=csgoheavy@gmail.com&username=doomcat.fuck&password=Password_12345&phoneNumber=5037061686')
+      .map((res: Response) => res.json())
+      .subscribe(res => this.responseObject = res);
   }
 
   ngOnInit() {
   }
 
-  register(){
-    return this.http.get(this.urlOutput)
-      .map((res: Response) => res.json());
-  }
-
-  submitForm(username: string, password:string, passwordConfirm: string, email:string, phoneNumber: string, firstName:string, lastName:string, address: string, addressTwo:string, city: string, state: string, postalCode: string ): void {
+  submitForm(username: string, password:string, passwordConfirm: string, email:string, phoneNumber: string, firstName:string, lastName:string, address: string, addressTwo:string, city: string, state: string, postalCode: string ): void{
     console.log('username', username);
     console.log('Password', password);
     console.log('PasswordConfirm', passwordConfirm);
@@ -38,11 +36,9 @@ export class UserRegistrationComponent implements OnInit {
     console.log('State', state);
     console.log('PostalCode', postalCode);
 
-    var outputString = "https://441f7d04p3.execute-api.us-west-2.amazonaws.com/prod/register-user?" + "name=" + firstName + "+" + lastName + "&" + "email=" + email + "&" + "username=" + username + "&" + "password=" + password + "&" + "phoneNumber=" + phoneNumber;
 
-    console.log('Link', outputString);
-
-
+    let outputString = "https://441f7d04p3.execute-api.us-west-2.amazonaws.com/prod/register-user?" + "name=" + firstName + "+" + lastName + "&" + "email=" + email + "&" + "username=" + username + "&" + "password=" + password + "&" + "phoneNumber=" + phoneNumber;
+    console.log(this.responseObject);
 
   }
 
