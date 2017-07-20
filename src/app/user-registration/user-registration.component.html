@@ -56,9 +56,11 @@
       </tr></table>
       <div class="button-row">
         <a routerLink="/"><button md-raised-button>Cancel</button></a>
-        <a routerLink="/console"><button (click)="submitForm(newUsername.value, newPassword.value, newPasswordConfirm.value, newEmail.value, newPhoneNumber.value, newFirstName.value, newLastName.value, newAddress.value, newAddressTwo.value, newCity.value, newState.value, newPostalCode.value);" md-raised-button style="margin-left: 10px;">Confirm</button></a>
+        <a routerLink="/console"><button (click)="register();" md-raised-button style="margin-left: 10px;">Confirm</button></a>
       </div>
     </form>
   </md-card>
 </div>
 
+
+<!--submitForm(newUsername.value, newPassword.value, newPasswordConfirm.value, newEmail.value, newPhoneNumber.value, newFirstName.value, newLastName.value, newAddress.value, newAddressTwo.value, newCity.value, newState.value, newPostalCode.value);-->

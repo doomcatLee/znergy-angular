@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Http,Response} from "@angular/http";
+import 'rxjs/add/operator/map';
 
 
 @Component({
@@ -8,13 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserRegistrationComponent implements OnInit {
 
-  constructor() { }
+  urlOutput: string = "https://441f7d04p3.execute-api.us-west-2.amazonaws.com/prod/register-user?name=alex+lee&email=hi.there@gmail.com&username=bi&password=asdQWE123!&phoneNumber=12341234";
+
+  constructor(private http: Http) {
+    this.register();
+  }
 
   ngOnInit() {
   }
 
-  urlBuilder(){
-
+  register(){
+    return this.http.get(this.urlOutput)
+      .map((res: Response) => res.json());
   }
 
   submitForm(username: string, password:string, passwordConfirm: string, email:string, phoneNumber: string, firstName:string, lastName:string, address: string, addressTwo:string, city: string, state: string, postalCode: string ): void {
