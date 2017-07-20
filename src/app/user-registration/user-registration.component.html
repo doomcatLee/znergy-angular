@@ -1,57 +1,58 @@
 
 <div class="body-container">
-<md-card>
-  <form class="example-form">
-    <md-input-container class="example-full-width">
-      <input mdInput placeholder="Username">
-    </md-input-container>
-
-    <table class="example-full-width" cellspacing="0"><tr>
-      <td><md-input-container class="example-full-width">
-        <input type="password" mdInput placeholder="Password">
-      </md-input-container></td>
-      <td><md-input-container id="seperateInput" class="example-full-width">
-        <input type="password" mdInput placeholder="Password Confirm">
-      </md-input-container></td>
-    </tr></table>
-
-    <md-input-container style="margin-top: 50px;" class="example-full-width">
-      <input mdInput placeholder="Company">
-    </md-input-container>
-
-    <table class="example-full-width" cellspacing="0"><tr>
-      <td><md-input-container class="example-full-width">
-        <input mdInput placeholder="First name">
-      </md-input-container></td>
-      <td><md-input-container id="seperateInput" class="example-full-width">
-        <input mdInput placeholder="Last name">
-      </md-input-container></td>
-    </tr></table>
-
-    <p>
+  <md-card>
+    <form class="example-form">
       <md-input-container class="example-full-width">
-        <textarea mdInput placeholder="Address"></textarea>
+        <input mdInput placeholder="Username" #newUsername>
       </md-input-container>
-      <md-input-container class="example-full-width">
-        <textarea mdInput placeholder="Address 2"></textarea>
-      </md-input-container>
-    </p>
 
-    <table class="example-full-width" cellspacing="0"><tr>
-      <td><md-input-container class="example-full-width">
-        <input mdInput placeholder="City">
-      </md-input-container></td>
-      <td><md-input-container id="seperateInput" class="example-full-width">
-        <input mdInput placeholder="State">
-      </md-input-container></td>
-      <td><md-input-container id="seperateInput" class="example-full-width">
-        <input mdInput #postalCode maxlength="5" placeholder="Postal Code">
-      </md-input-container></td>
-    </tr></table>
-    <div class="button-row">
-      <a routerLink="/"><button md-raised-button>Cancel</button></a>
-      <a routerLink="/console"><button md-raised-button style="margin-left: 10px;">Confirm</button></a>
-    </div>
-  </form>
-</md-card>
+      <table class="example-full-width" cellspacing="0"><tr>
+        <td><md-input-container class="example-full-width">
+          <input type="password" mdInput placeholder="Password" #newPassword>
+        </md-input-container></td>
+        <td><md-input-container id="seperateInput" class="example-full-width">
+          <input type="password" mdInput placeholder="Password Confirm" #newPasswordConfirm>
+        </md-input-container></td>
+      </tr></table>
+
+      <md-input-container style="margin-top: 50px;" class="example-full-width">
+        <input mdInput placeholder="Company" #newCompany>
+      </md-input-container>
+
+      <table class="example-full-width" cellspacing="0"><tr>
+        <td><md-input-container class="example-full-width">
+          <input mdInput placeholder="First name" #newFirstName>
+        </md-input-container></td>
+        <td><md-input-container id="seperateInput" class="example-full-width">
+          <input mdInput placeholder="Last name" #newLastName>
+        </md-input-container></td>
+      </tr></table>
+
+      <p>
+        <md-input-container class="example-full-width">
+          <textarea mdInput placeholder="Address" #newAddress></textarea>
+        </md-input-container>
+        <md-input-container class="example-full-width">
+          <textarea mdInput placeholder="Address 2" #newAddressTwo></textarea>
+        </md-input-container>
+      </p>
+
+      <table class="example-full-width" cellspacing="0"><tr>
+        <td><md-input-container class="example-full-width">
+          <input mdInput placeholder="City" #newCity>
+        </md-input-container></td>
+        <td><md-input-container id="seperateInput" class="example-full-width">
+          <input mdInput placeholder="State" #newState>
+        </md-input-container></td>
+        <td><md-input-container id="seperateInput" class="example-full-width">
+          <input mdInput #postalCode maxlength="5" placeholder="Postal Code" #newPostalCode>
+        </md-input-container></td>
+      </tr></table>
+      <div class="button-row">
+        <a routerLink="/"><button md-raised-button>Cancel</button></a>
+        <a routerLink="/console"><button (click)="submitForm(newUsername.value, newPassword.value, newPasswordConfirm.value, newCompany.value, newFirstName.value, newLastName.value, newAddress.value, newAddressTwo.value, newCity.value, newState.value, newPostalCode.value);" md-raised-button style="margin-left: 10px;">Confirm</button></a>
+      </div>
+    </form>
+  </md-card>
 </div>
+
