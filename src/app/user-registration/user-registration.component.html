@@ -8,31 +8,31 @@
 
       <table class="example-full-width" cellspacing="0"><tr>
         <td><md-input-container class="example-full-width">
+          <input mdInput placeholder="First name" #newFirstName>
+        </md-input-container></td>
+        <td><md-input-container class="example-full-width">
+          <input mdInput placeholder="Last name" #newLastName>
+        </md-input-container></td>
+      </tr></table>
+      <table class="example-full-width" cellspacing="0"><tr>
+        <td><md-input-container class="example-full-width">
           <input type="password" mdInput placeholder="Password" #newPassword>
         </md-input-container></td>
-        <td><md-input-container id="seperateInput" class="example-full-width">
+        <td><md-input-container class="example-full-width">
           <input type="password" mdInput placeholder="Password Confirm" #newPasswordConfirm>
         </md-input-container></td>
       </tr></table>
 
       <md-input-container style="margin-top: 50px;" class="example-full-width">
-        <input mdInput placeholder="Email" #newEmail>
+        <input type="email" mdInput placeholder="Email" #newEmail>
       </md-input-container>
 
       <md-input-container style="margin-top: 50px;" class="example-full-width">
-        <input mdInput placeholder="Phone number" #newPhoneNumber>
+        <input type="tel" mdInput placeholder="Phone number" #newPhoneNumber>
       </md-input-container>
 
 
 
-      <table class="example-full-width" cellspacing="0"><tr>
-        <td><md-input-container class="example-full-width">
-          <input mdInput placeholder="First name" #newFirstName>
-        </md-input-container></td>
-        <td><md-input-container id="seperateInput" class="example-full-width">
-          <input mdInput placeholder="Last name" #newLastName>
-        </md-input-container></td>
-      </tr></table>
 
       <p>
         <md-input-container class="example-full-width">
@@ -47,10 +47,10 @@
         <td><md-input-container class="example-full-width">
           <input mdInput placeholder="City" #newCity>
         </md-input-container></td>
-        <td><md-input-container id="seperateInput" class="example-full-width">
+        <td><md-input-container class="example-full-width">
           <input mdInput placeholder="State" #newState>
         </md-input-container></td>
-        <td><md-input-container id="seperateInput" class="example-full-width">
+        <td><md-input-container class="example-full-width">
           <input mdInput #postalCode maxlength="5" placeholder="Postal Code" #newPostalCode>
         </md-input-container></td>
       </tr></table>
