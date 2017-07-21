@@ -11,8 +11,8 @@ export class UserConfirmationComponent implements OnInit {
 
   constructor(private apiService: ApiService) { }
 
-  async ngOnInit() {
-    console.log(await this.apiService.registerUser());
+  ngOnInit() {
+
   }
 
   submitForm(username: string, confirmationCode:string): void {
