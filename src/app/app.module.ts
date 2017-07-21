@@ -12,6 +12,8 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdInputModule, MdTableModule } from '@angular/material';
 import { GenerateUrlComponent } from './generate-url/generate-url.component';
+import { UserConfirmationComponent } from './user-confirmation/user-confirmation.component';
+import {ApiService} from "./services/api.service";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { GenerateUrlComponent } from './generate-url/generate-url.component';
     IndexComponent,
     ConsoleComponent,
     UserRegistrationComponent,
-    GenerateUrlComponent
+    GenerateUrlComponent,
+    UserConfirmationComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,9 @@ import { GenerateUrlComponent } from './generate-url/generate-url.component';
     MdInputModule,
     MdTableModule
   ],
-  providers: [],
+  providers: [
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

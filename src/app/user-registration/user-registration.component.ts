@@ -9,37 +9,42 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./user-registration.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
+
   responseObject: Object;
 
-
   constructor(private http: Http) {
-    this.responseObject = {objects:[]};
-    this.http.get('https://441f7d04p3.execute-api.us-west-2.amazonaws.com/prod/register-user?name=Ryan+Jones&email=csgoheavy@gmail.com&username=doomcat.fuck&password=Password_12345&phoneNumber=5037061686')
-      .map((res: Response) => res.json())
-      .subscribe(res => this.responseObject = res);
   }
 
   ngOnInit() {
   }
 
   submitForm(username: string, password:string, passwordConfirm: string, email:string, phoneNumber: string, firstName:string, lastName:string, address: string, addressTwo:string, city: string, state: string, postalCode: string ): void{
-    console.log('username', username);
-    console.log('Password', password);
-    console.log('PasswordConfirm', passwordConfirm);
-    console.log('Email', email);
-    console.log('PhoneNumber', phoneNumber);
-    console.log('FirstName', firstName);
-    console.log('LastName', lastName);
-    console.log('Address', address);
-    console.log('Address2', addressTwo);
-    console.log('City', city);
-    console.log('State', state);
-    console.log('PostalCode', postalCode);
+  //   console.log('username', username);
+  // console.log('Password', password);
+  // console.log('PasswordConfirm', passwordConfirm);
+  // console.log('Email', email);
+  // console.log('PhoneNumber', phoneNumber);
+  // console.log('FirstName', firstName);
+  // console.log('LastName', lastName);
+  // console.log('Address', address);
+  // console.log('Address2', addressTwo);
+  // console.log('City', city);
+  // console.log('State', state);
+  // console.log('PostalCode', postalCode);
 
 
-    let outputString = "https://441f7d04p3.execute-api.us-west-2.amazonaws.com/prod/register-user?" + "name=" + firstName + "+" + lastName + "&" + "email=" + email + "&" + "username=" + username + "&" + "password=" + password + "&" + "phoneNumber=" + phoneNumber;
+  let outputString = "https://441f7d04p3.execute-api.us-west-2.amazonaws.com/prod/register-user?" + "name=" + firstName + "+" + lastName + "&" + "email=" + email + "&" + "username=" + username + "&" + "password=" + password + "&" + "phoneNumber=" + phoneNumber;
+  console.log(outputString);
+
+
+    this.responseObject = {objects:[]};
+    this.http.get(outputString)
+      .map((res: Response) => res.json())
+      .subscribe(res => this.responseObject = res);
+
     console.log(this.responseObject);
 
-  }
+}
 
 }
+
