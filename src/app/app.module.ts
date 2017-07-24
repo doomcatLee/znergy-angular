@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { UserFormComponent } from './public/user-form/user-form.component';
 import { IndexComponent } from './public/index/index.component';
 import { routing } from './app.routing';
-import { ConsoleComponent } from './console/console.component';
+import { ConsoleComponent } from './secure/console/console.component';
 import { UserRegistrationComponent } from './public/user-registration/user-registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdInputModule, MdTableModule } from '@angular/material';
