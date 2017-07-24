@@ -1,6 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, NgModule, Input} from '@angular/core';
 import 'rxjs/add/operator/map';
 import {ApiService} from '../../services/api.service';
+import {FormsModule} from "@angular/forms";
+import {BrowserModule} from "@angular/platform-browser";
+import { UserRegistrationComponent } from '../../public/user-registration/user-registration.component';
+import {AppService} from "../../services/app.service";
+
+@NgModule({
+  imports: [ BrowserModule,FormsModule ],
+  declarations: [ UserRegistrationComponent ],
+  bootstrap: [ UserRegistrationComponent ]
+})
+
 
 @Component({
   selector: 'app-user-confirmation',
@@ -8,20 +19,20 @@ import {ApiService} from '../../services/api.service';
   styleUrls: ['./user-confirmation.component.css']
 })
 export class UserConfirmationComponent implements OnInit {
+  private username:string;
 
-  constructor(private apiService: ApiService) { }
-
-  ngOnInit() {
+  constructor(private apiService: ApiService, private appService: AppService) {
 
   }
 
-  submitForm(username: string, confirmationCode:string): void {
-    console.log('username', username);
-    console.log('Password', confirmationCode);
+  ngOnInit() {
+    console.log('username: '+ this.appService.getUsername());
+    this.username = this.appService.getUsername();
+  }
 
-    var outputString = "https://441f7d04p3.execute-api.us-west-2.amazonaws.com/prod/confirm-registration?" + "username=" + username + "&" + "code=" + confirmationCode;
-
-    console.log('Link', outputString);
+  async submitForm(c:string){
+    var output = await this.apiService.confirmUser(this.username,c);
+    console.log(output);
   }
 
 }
