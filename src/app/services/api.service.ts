@@ -11,7 +11,6 @@ export class ApiService {
 
   async registerUser(username: string, password:string, email:string, phoneNumber: string, firstName:string, lastName:string): Promise<number> {
     const outputUrl = this.registerUrl + "name=" + firstName + "+" + lastName + "&" + "email=" + email + "&" + "username=" + username + "&" + "password=" + password + "&" + "phoneNumber=" + phoneNumber;
-    console.log(outputUrl);
     const response = await this.http.get(outputUrl).toPromise();
     return response.json();
   }
