@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from "@angular/http";
 import 'rxjs/add/operator/map';
-import {ApiService} from "../services/api.service";
+import {ApiService} from '../../services/api.service';
 
 
 @Component({

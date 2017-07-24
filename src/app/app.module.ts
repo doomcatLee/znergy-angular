@@ -4,15 +4,15 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { UserFormComponent } from './user-form/user-form.component';
-import { IndexComponent } from './index/index.component';
+import { UserFormComponent } from './public/user-form/user-form.component';
+import { IndexComponent } from './public/index/index.component';
 import { routing } from './app.routing';
 import { ConsoleComponent } from './console/console.component';
-import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { UserRegistrationComponent } from './public/user-registration/user-registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdInputModule, MdTableModule } from '@angular/material';
-import { GenerateUrlComponent } from './generate-url/generate-url.component';
-import { UserConfirmationComponent } from './user-confirmation/user-confirmation.component';
+import { GenerateUrlComponent } from './public/generate-url/generate-url.component';
+import { UserConfirmationComponent } from './public/user-confirmation/user-confirmation.component';
 import {ApiService} from "./services/api.service";
 
 @NgModule({

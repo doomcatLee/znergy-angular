@@ -1,10 +1,10 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { IndexComponent } from './index/index.component';
-import { UserFormComponent } from './user-form/user-form.component';
+import { IndexComponent } from './public/index/index.component';
+import { UserFormComponent } from './public/user-form/user-form.component';
 import { ConsoleComponent } from './console/console.component';
-import { UserRegistrationComponent } from './user-registration/user-registration.component';
-import { UserConfirmationComponent } from './user-confirmation/user-confirmation.component';
+import { UserRegistrationComponent } from './public/user-registration/user-registration.component';
+import { UserConfirmationComponent } from './public/user-confirmation/user-confirmation.component';
 
 const appRoutes: Routes = [
   {
