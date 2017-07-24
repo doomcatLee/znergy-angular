@@ -20,14 +20,15 @@ import {AppService} from "../../services/app.service";
 })
 export class UserConfirmationComponent implements OnInit {
   private username:string;
+  private email:string;
 
   constructor(private apiService: ApiService, private appService: AppService) {
 
   }
 
   ngOnInit() {
-    console.log('username: '+ this.appService.getUsername());
     this.username = this.appService.getUsername();
+    this.email = this.appService.getEmail();
   }
 
   async submitForm(c:string){

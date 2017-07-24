@@ -19,7 +19,8 @@ export class UserRegistrationComponent implements OnInit {
   }
 
   async submitForm(a: string, b: string, c: string, d: string, e: string, f: string){
-    this.appService.setUsername(a);
+    this.appService.setUsername(a); //save username globally using appservice
+    this.appService.setEmail(c); //save email globally using appservice
     var output = await this.apiService.registerUser(a,b,c,d,e,f);
     console.log(output);
   }
