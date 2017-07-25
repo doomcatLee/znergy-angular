@@ -5,7 +5,6 @@ import { UserFormComponent } from './public/user-form/user-form.component';
 import { ConsoleComponent } from './secure/console/console.component';
 import { UserRegistrationComponent } from './public/user-registration/user-registration.component';
 import { UserConfirmationComponent } from './public/user-confirmation/user-confirmation.component';
-import {LoginComponent} from "./login/login.component";
 
 const appRoutes: Routes = [
   {
