@@ -27,10 +27,6 @@ const appRoutes: Routes = [
   {
     path: 'userConfirmation',
     component: UserConfirmationComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
   }
 
 ];

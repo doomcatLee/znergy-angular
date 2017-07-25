@@ -1,66 +1,91 @@
 
-<div class="body-container">
-  <md-card>
-    <form novalidate class="example-form">
-      <md-input-container class="example-full-width">
-        <input mdInput placeholder="Username" #newUsername>
-      </md-input-container>
+<md-card>
+  <h1>Registration</h1>
+  <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)">
+    <div class="form-group">
+      <label for="">Username</label>
+      <input type="text" class="form-control" formControlName="username">
+      <small [hidden]="myForm.controls.username.valid || (myForm.controls.username.pristine && !submitted)" class="text-danger">
+        Username is required (minimum 5 characters).
+      </small>
+    </div>
 
-      <table class="example-full-width" cellspacing="0"><tr>
-        <td><md-input-container class="example-full-width">
-          <input mdInput placeholder="First name" #newFirstName>
-        </md-input-container></td>
-        <td><md-input-container class="example-full-width">
-          <input mdInput placeholder="Last name" #newLastName>
-        </md-input-container></td>
-      </tr></table>
-      <table class="example-full-width" cellspacing="0"><tr>
-        <td><md-input-container class="example-full-width">
-          <input type="password" mdInput placeholder="Password" #newPassword>
-        </md-input-container></td>
-        <td><md-input-container class="example-full-width">
-          <input type="password" mdInput placeholder="Password Confirm" #newPasswordConfirm>
-        </md-input-container></td>
-      </tr></table>
-
-      <md-input-container style="margin-top: 50px;" class="example-full-width">
-        <input type="email" mdInput placeholder="Email" #newEmail>
-      </md-input-container>
-
-      <md-input-container style="margin-top: 50px;" class="example-full-width">
-        <input type="tel" mdInput placeholder="Phone number" #newPhoneNumber>
-      </md-input-container>
-
-
-
-
-      <p>
-        <md-input-container class="example-full-width">
-          <textarea mdInput placeholder="Address" #newAddress></textarea>
-        </md-input-container>
-        <md-input-container class="example-full-width">
-          <textarea mdInput placeholder="Address 2" #newAddressTwo></textarea>
-        </md-input-container>
-      </p>
-
-      <table class="example-full-width" cellspacing="0"><tr>
-        <td><md-input-container class="example-full-width">
-          <input mdInput placeholder="City" #newCity>
-        </md-input-container></td>
-        <td><md-input-container class="example-full-width">
-          <input mdInput placeholder="State" #newState>
-        </md-input-container></td>
-        <td><md-input-container class="example-full-width">
-          <input mdInput #postalCode maxlength="5" placeholder="Postal Code" #newPostalCode>
-        </md-input-container></td>
-      </tr></table>
-      <div class="button-row">
-        <a routerLink="/"><button md-raised-button>Cancel</button></a>
-        <a routerLink="/userConfirmation"><button (click)="submitForm(newUsername.value, newPassword.value, newEmail.value, newPhoneNumber.value, newFirstName.value, newLastName.value);" md-raised-button style="margin-left: 10px;">Confirm</button></a>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="">Password</label>
+          <input type="password" class="form-control" formControlName="password">
+        </div>
+        <div class="col-md-6">
+          <label for="">Confirm password</label>
+          <input type="password" class="form-control" formControlName="passwordConfirm">
+        </div>
       </div>
-    </form>
-  </md-card>
-</div>
+    </div>
+
+    <div class="form-group">
+      <div class="row" style="margin-top: 7%;">
+        <div class="col-md-6">
+          <label for="">First name</label>
+          <input type="text" class="form-control" formControlName="firstName">
+        </div>
+        <div class="col-md-6">
+          <label for="">Last name</label>
+          <input type="text" class="form-control" formControlName="lastName">
+        </div>
+      </div>
+    </div>
 
 
-<!--submitForm(newUsername.value, newPassword.value, newPasswordConfirm.value, newEmail.value, newPhoneNumber.value, newFirstName.value, newLastName.value, newAddress.value, newAddressTwo.value, newCity.value, newState.value, newPostalCode.value);-->
+    <div class="form-group">
+      <label for="">Email</label>
+      <input type="text" class="form-control" formControlName="email">
+      <small [hidden]="myForm.controls.email.valid || (myForm.controls.email.pristine && !submitted)" class="text-danger">
+        Not a valid email address
+      </small>
+      <!--<pre class="margin-20">{{ myForm.controls.name.errors | json }}</pre>-->
+    </div>
+
+    <div class="form-group">
+      <label for="">Phone number</label>
+      <input type="text" class="form-control" formControlName="phoneNumber">
+      <small [hidden]="myForm.controls.phoneNumber.valid || (myForm.controls.phoneNumber.pristine && !submitted)" class="text-danger">
+        Not a valid phone number
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="">Address</label>
+      <input type="text" class="form-control" formControlName="phoneNumber">
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-4">
+          <label for="">City</label>
+          <input type="text" class="form-control" formControlName="firstName">
+        </div>
+        <div class="col-md-4">
+          <label for="">State</label>
+          <input type="text" class="form-control" formControlName="lastName">
+        </div>
+        <div class="col-md-4">
+          <label for="">Zipcode</label>
+          <input type="text" class="form-control" formControlName="zipcode">
+          <small [hidden]="myForm.controls.zipcode.valid || (myForm.controls.zipcode.pristine && !submitted)" class="text-danger">
+            Not a valid zipcode
+          </small>
+        </div>
+      </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-default">Submit</button>
+    <div class="margin-20">
+      <h1>Backend output</h1>
+      <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>
+      <pre>Is myForm submitted?: <br>{{submitted | json}}</pre>
+      <pre>myForm value: <br>{{myForm.value | json}}</pre>
+    </div>
+  </form>
+</md-card>

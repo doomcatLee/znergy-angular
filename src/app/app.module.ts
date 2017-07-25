@@ -15,7 +15,6 @@ import { GenerateUrlComponent } from './public/generate-url/generate-url.compone
 import { UserConfirmationComponent } from './public/user-confirmation/user-confirmation.component';
 import {ApiService} from "./services/api.service";
 import {AppService} from "./services/app.service";
-import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import { LoginComponent } from './login/login.component';
     ConsoleComponent,
     UserRegistrationComponent,
     GenerateUrlComponent,
-    UserConfirmationComponent,
-    LoginComponent
+    UserConfirmationComponent
   ],
   imports: [
     BrowserModule,
