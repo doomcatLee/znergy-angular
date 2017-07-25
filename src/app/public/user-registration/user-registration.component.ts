@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { User } from '../../../user.interface';
 import {AppService} from "../../services/app.service";
+import {MdDialog} from '@angular/material';
+
 
 @Component({
   selector: 'app-user-registration',
@@ -14,19 +16,9 @@ export class UserRegistrationComponent implements OnInit {
   public submitted: boolean;
   public events: any[] = [];
 
-  constructor(private _fb: FormBuilder) { }
+  constructor(private _fb: FormBuilder, public dialog: MdDialog) { }
 
   ngOnInit() {
-    // the long way
-    // this.myForm = new FormGroup({
-    //     name: new FormControl('', [<any>Validators.required, <any>Validators.minLength(5)]),
-    //     address: new FormGroup({
-    //         address1: new FormControl('', <any>Validators.required),
-    //         postcode: new FormControl('8000')
-    //     })
-    // });
-
-    // the short way
     this.myForm = this._fb.group({
       username: ['', [<any>Validators.required, <any>Validators.minLength(5)]],
       email: ['', [Validators.required, AppService.emailValidator]],
@@ -44,19 +36,10 @@ export class UserRegistrationComponent implements OnInit {
 
     // subscribe to form changes
     this.subcribeToFormChanges();
+  }
 
-    // Update form model
-    // const people = {
-    // 	name: 'Jane',
-    // 	address: {
-    // 		street: 'High street',
-    // 		postcode: '94043'
-    // 	}
-    // };
-
-    // (<FormGroup>this.myForm)
-    //     .setValue(people, { onlySelf: true });
-
+  public openDialog() {
+    this.dialog.open(DialogIncompleteForm);
   }
 
   subcribeToFormChanges() {
@@ -72,3 +55,11 @@ export class UserRegistrationComponent implements OnInit {
     console.log(model, isValid);
   }
 }
+
+@Component({
+  selector: 'dialog-incomplete-form',
+  templateUrl: 'dialog-incomplete-form.html',
+  styleUrls: ['./user-registration.component.css']
+})
+export class DialogIncompleteForm{}
+

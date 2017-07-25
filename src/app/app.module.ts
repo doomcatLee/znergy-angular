@@ -8,9 +8,12 @@ import { UserFormComponent } from './public/user-form/user-form.component';
 import { IndexComponent } from './public/index/index.component';
 import { routing } from './app.routing';
 import { ConsoleComponent } from './secure/console/console.component';
-import { UserRegistrationComponent } from './public/user-registration/user-registration.component';
+import {UserRegistrationComponent, DialogIncompleteForm} from './public/user-registration/user-registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdInputModule, MdTableModule } from '@angular/material';
+import {
+  MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdInputModule, MdTableModule,
+  MdDialog, MdDialogModule
+} from '@angular/material';
 import { GenerateUrlComponent } from './public/generate-url/generate-url.component';
 import { UserConfirmationComponent } from './public/user-confirmation/user-confirmation.component';
 import {ApiService} from "./services/api.service";
@@ -23,7 +26,8 @@ import {ApiService} from "./services/api.service";
     ConsoleComponent,
     UserRegistrationComponent,
     GenerateUrlComponent,
-    UserConfirmationComponent
+    UserConfirmationComponent,
+    DialogIncompleteForm,
   ],
   imports: [
     BrowserModule,
@@ -42,10 +46,14 @@ import {ApiService} from "./services/api.service";
     MdIconModule,
     MdInputModule,
     MdTableModule,
+    MdDialogModule
   ],
   providers: [
     ApiService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DialogIncompleteForm
+  ]
 })
 export class AppModule { }
