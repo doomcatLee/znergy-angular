@@ -4,7 +4,7 @@
   <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)">
     <div class="form-group">
       <label for="">Username</label>
-      <input type="text" class="form-control" formControlName="username">
+      <input type="text" class="form-control" formControlName="username" #username>
       <small [hidden]="myForm.controls.username.valid || (myForm.controls.username.pristine && !submitted)" class="text-danger">
         Username is required (minimum 5 characters).
       </small>
@@ -14,11 +14,11 @@
       <div class="row">
         <div class="col-md-6">
           <label for="">Password</label>
-          <input type="password" class="form-control" formControlName="password">
+          <input type="password" class="form-control" formControlName="password" #password>
         </div>
         <div class="col-md-6">
           <label for="">Confirm password</label>
-          <input type="password" class="form-control" formControlName="passwordConfirm">
+          <input type="password" class="form-control" formControlName="passwordConfirm" #passwordConfirm>
         </div>
       </div>
     </div>
@@ -27,11 +27,11 @@
       <div class="row" style="margin-top: 7%;">
         <div class="col-md-6">
           <label for="">First name</label>
-          <input type="text" class="form-control" formControlName="firstName">
+          <input type="text" class="form-control" formControlName="firstName" #firstname>
         </div>
         <div class="col-md-6">
           <label for="">Last name</label>
-          <input type="text" class="form-control" formControlName="lastName">
+          <input type="text" class="form-control" formControlName="lastName" #lastname>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@
 
     <div class="form-group">
       <label for="">Email</label>
-      <input type="text" class="form-control" formControlName="email">
+      <input type="text" class="form-control" formControlName="email" #email>
       <small [hidden]="myForm.controls.email.valid || (myForm.controls.email.pristine && !submitted)" class="text-danger">
         Not a valid email address
       </small>
@@ -48,7 +48,7 @@
 
     <div class="form-group">
       <label for="">Phone number</label>
-      <input type="text" class="form-control" formControlName="phoneNumber">
+      <input type="text" class="form-control" formControlName="phoneNumber" #phonenumber>
       <small [hidden]="myForm.controls.phoneNumber.valid || (myForm.controls.phoneNumber.pristine && !submitted)" class="text-danger">
         Not a valid phone number
       </small>
@@ -56,18 +56,18 @@
 
     <div class="form-group">
       <label for="">Address</label>
-      <input type="text" class="form-control" formControlName="phoneNumber">
+      <input type="text" class="form-control" formControlName="address" #address>
     </div>
 
     <div class="form-group">
       <div class="row">
         <div class="col-md-4">
           <label for="">City</label>
-          <input type="text" class="form-control" formControlName="firstName">
+          <input type="text" class="form-control" formControlName="city">
         </div>
         <div class="col-md-4">
           <label for="">State</label>
-          <input type="text" class="form-control" formControlName="lastName">
+          <input type="text" class="form-control" formControlName="state">
         </div>
         <div class="col-md-4">
           <label for="">Zipcode</label>
@@ -80,8 +80,7 @@
     </div>
 
 
-    <button type="submit" class="btn btn-default" (click)="openDialog()">Submit</button>
-    <div *ngIf="myForm.valid != true">Form must be complete</div>
+    <button type="submit" class="btn btn-default" (click)="submitForm(username.value, password.value, email.value, phonenumber.value, firstname.value, lastname.value )">Submit</button>
     <div class="margin-20">
       <h1>Backend output</h1>
       <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>

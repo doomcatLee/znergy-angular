@@ -17,6 +17,7 @@ import {
 import { GenerateUrlComponent } from './public/generate-url/generate-url.component';
 import { UserConfirmationComponent } from './public/user-confirmation/user-confirmation.component';
 import {ApiService} from "./services/api.service";
+import {AppService} from "./services/app.service";
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import {ApiService} from "./services/api.service";
     MdDialogModule
   ],
   providers: [
-    ApiService
+    ApiService,
+    AppService
   ],
   bootstrap: [AppComponent],
   entryComponents: [

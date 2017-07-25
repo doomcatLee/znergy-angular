@@ -3,6 +3,8 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { User } from '../../../user.interface';
 import {AppService} from "../../services/app.service";
 import {MdDialog} from '@angular/material';
+import {Router, ActivatedRoute} from "@angular/router";
+import {ApiService} from "../../services/api.service";
 
 
 @Component({
@@ -16,30 +18,46 @@ export class UserRegistrationComponent implements OnInit {
   public submitted: boolean;
   public events: any[] = [];
 
-  constructor(private _fb: FormBuilder, public dialog: MdDialog) { }
+  constructor(private _fb: FormBuilder, public dialog: MdDialog, public router:Router, private route: ActivatedRoute, private appService:AppService, private apiService: ApiService) { }
 
   ngOnInit() {
     this.myForm = this._fb.group({
       username: ['', [<any>Validators.required, <any>Validators.minLength(5)]],
-      email: ['', [Validators.required, AppService.emailValidator]],
       password: [''],
       passwordConfirm: [''],
-      firstName: [''],
-      lastName: [''],
+      email: ['', [Validators.required, AppService.emailValidator]],
+      phoneNumber: ['', [Validators.required, <any>Validators.minLength(10)]],
       address: [''],
       city: [''],
-      phoneNumber: ['', [Validators.required, <any>Validators.minLength(10)]],
-      zipcode: ['', [<any>Validators.required, <any>Validators.minLength(5)]]
+      state: [''],
+      zipcode: ['', [<any>Validators.required, <any>Validators.minLength(5)]],
+      firstName: [''],
+      lastName: [''],
     });
-
-    //<any>Validators.pattern('[A-Za-z]{5}')
 
     // subscribe to form changes
     this.subcribeToFormChanges();
   }
 
-  public openDialog() {
-    this.dialog.open(DialogIncompleteForm);
+
+
+  async submitForm(a: string, b: string, c:string, d:string, e:string, f:string) {
+    if(this.myForm.valid != true){
+      this.dialog.open(DialogIncompleteForm);
+    }else{
+      this.appService.setUsername(a); //save username globally using appservice
+      this.appService.setEmail(c); //save email globally using appservice
+      var output = await this.apiService.registerUser(a,b,c,d,e,f);
+      console.log(output);
+      console.log(output);
+      console.log("username", a);
+      console.log("password", b);
+      console.log('email', c);
+      console.log('phonenumber', d);
+      console.log('first',e);
+      console.log('last',f);
+      this.router.navigate(['/userConfirmation']);
+    }
   }
 
   subcribeToFormChanges() {

@@ -14,11 +14,6 @@ export class ApiService {
     const outputUrl = this.registerUrl + "name=" + firstName + "+" + lastName + "&" + "email=" + email + "&" + "username=" + username + "&" + "password=" + password + "&" + "phoneNumber=" + phoneNumber;
     const response = await this.http.get(outputUrl).toPromise();
     var statusCode = response.json().code;
-    if (statusCode == '1'){
-      console.log('username is invalid');
-    }else if (statusCode == '2'){
-      console.log('password does not match');
-    }
     return response.json();
   }
 
