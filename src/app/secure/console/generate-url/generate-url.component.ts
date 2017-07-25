@@ -12,7 +12,7 @@ export class GenerateUrlComponent implements OnInit {
 
   createRecordUrl = 'create-item-ddb?';
   readRecordUrl = 'read-single-record-ddb?';
-  deleteRecordUrl = 'delete-single-record-ddb'
+  deleteRecordUrl = 'delete-single-record-ddb?'
 
   constructor() { }
 
@@ -35,6 +35,7 @@ export class GenerateUrlComponent implements OnInit {
   }
 
   generateURLs(tableName: String, partitionKey: String, sortKey: String){
+    //TODO: Update URL building code after Ryan updates API Gateway
     // Items in brackets [] to be replaced by actual String/Number values
 
     // Create Single Record
