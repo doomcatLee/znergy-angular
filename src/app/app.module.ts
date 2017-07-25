@@ -15,6 +15,7 @@ import { GenerateUrlComponent } from './public/generate-url/generate-url.compone
 import { UserConfirmationComponent } from './public/user-confirmation/user-confirmation.component';
 import {ApiService} from "./services/api.service";
 import {AppService} from "./services/app.service";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +25,12 @@ import {AppService} from "./services/app.service";
     ConsoleComponent,
     UserRegistrationComponent,
     GenerateUrlComponent,
-    UserConfirmationComponent
+    UserConfirmationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     routing,
     ReactiveFormsModule,

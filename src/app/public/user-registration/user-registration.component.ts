@@ -5,6 +5,7 @@ import {ApiService} from '../../services/api.service';
 import {AppService} from '../../services/app.service';
 
 
+
 @Component({
   selector: 'app-user-registration',
   templateUrl: './user-registration.component.html',
@@ -12,8 +13,11 @@ import {AppService} from '../../services/app.service';
 })
 export class UserRegistrationComponent implements OnInit {
 
+  userForm: any;
+
   constructor(private http: Http, private apiService: ApiService, private appService: AppService) {
-  }
+
+}
 
   ngOnInit() {
   }
