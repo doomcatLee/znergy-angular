@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map'
 
+
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',

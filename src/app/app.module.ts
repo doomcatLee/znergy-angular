@@ -14,6 +14,8 @@ import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModu
 import { GenerateUrlComponent } from './public/generate-url/generate-url.component';
 import { UserConfirmationComponent } from './public/user-confirmation/user-confirmation.component';
 import {ApiService} from "./services/api.service";
+import {FlexLayoutModule} from "@angular/flex-layout";
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import {ApiService} from "./services/api.service";
     MdToolbarModule,
     MdIconModule,
     MdInputModule,
-    MdTableModule
+    MdTableModule,
+    FlexLayoutModule
   ],
   providers: [
     ApiService

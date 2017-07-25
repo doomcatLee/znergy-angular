@@ -13,38 +13,37 @@
     </md-toolbar> -->
 
 
-    <md-toolbar>
-      <span>ZNRGY</span>
-      <span class="example-spacer"></span>
-      <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon>Menu</button>
-      <!-- <span class="example-spacer"></span>
-      <button md-button [mdAboutTriggerFor]="appAbout"><md-icon>about</md-icon>About</button>
-      <span class="example-spacer"></span>
-      <button md-button [mdServicesTriggerFor]="appMenu"><md-icon>services</md-icon>Services</button>
-      <span class="example-spacer"></span>
-      <button md-button [mdPortfolioTriggerFor]="appMenu"><md-icon>portfolio</md-icon> Portfolio</button> -->
 
-      <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">Znergy</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#portfolio">PORTFOLIO</a></li>
-        <li><a href="#pricing">PRICING</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-    </div> -->
-</md-toolbar>
+
+    <md-toolbar layout="row" layout-align="space-between center">
+      <!-- <div class="md-toolbar-tools"> -->
+        <span>ZNRGY</span>
+        <span flex></span>
+          <button md-button [mdMenuTriggerFor]="appMenu"><md-icon></md-icon>Menu</button>
+          <!-- <span flex></span> -->
+          <button md-button [mdMenuTriggerFor]="userMenu"><md-icon></md-icon>UserNameHere</button><!-- this will only be visable when a user is logged in. -->
+          <button md-button [mdMenuTriggerFor]="loginMenu"><md-icon></md-icon>UserLogin</button>  <!-- this will only be visable when no user is logged in... -->
+  </md-toolbar>
+
+  <!-- <md-toolbar layout="row" layout-align="space-between center">
+    <span> <h2 class="md-toolbar-tools"> The Heading </h2></span>
+    <span flex>
+        <md-button aria-label="First Button"> Button1 </md-button>
+        <md-button aria-label="Second Button"> Button2 </md-button>
+    </span>
+</md-toolbar> -->
 
 <md-menu #appMenu="mdMenu">
   <button md-menu-item> Settings </button>
   <button md-menu-item> Help </button>
+</md-menu>
+<md-menu #loginMenu="mdMenu">
+  <button md-menu-item> Login </button>
+  <button md-menu-item> Sign Up </button>
+</md-menu>
+<md-menu #userMenu="mdMenu">
+  <button md-menu-item> Logout </button>
+  <button md-menu-item> My Account </button>
 </md-menu>
 <!-- <md-About #appAbout="mdAbout">
   <button md-menu-item> Settings </button>
