@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {Http,Response} from "@angular/http";
+import {Component, OnInit, Input, Output} from '@angular/core';
+import { Http, Response } from "@angular/http";
 import 'rxjs/add/operator/map';
 import {ApiService} from '../../services/api.service';
+import {AppService} from '../../services/app.service';
 
 
 @Component({
@@ -11,15 +12,17 @@ import {ApiService} from '../../services/api.service';
 })
 export class UserRegistrationComponent implements OnInit {
 
-  constructor(private http: Http, private apiService: ApiService) {
+  constructor(private http: Http, private apiService: ApiService, private appService: AppService) {
   }
 
   ngOnInit() {
   }
 
   async submitForm(a: string, b: string, c: string, d: string, e: string, f: string){
-    console.log(a,b,c,d,e,f);
-    console.log(await this.apiService.registerUser(a,b,c,d,e,f));
+    this.appService.setUsername(a); //save username globally using appservice
+    this.appService.setEmail(c); //save email globally using appservice
+    var output = await this.apiService.registerUser(a,b,c,d,e,f);
+    console.log(output);
   }
 
 }
