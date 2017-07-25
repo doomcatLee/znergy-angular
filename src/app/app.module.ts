@@ -27,7 +27,7 @@ import {ApiService} from "./services/api.service";
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     routing,
     ReactiveFormsModule,
