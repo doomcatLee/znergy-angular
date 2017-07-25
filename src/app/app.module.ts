@@ -42,11 +42,9 @@ import {ApiService} from "./services/api.service";
     MdIconModule,
     MdInputModule,
     MdTableModule,
-    FlexLayoutModule
   ],
   providers: [
-    ApiService,
-    AppService
+    ApiService
   ],
   bootstrap: [AppComponent]
 })
