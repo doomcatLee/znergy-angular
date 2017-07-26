@@ -1,0 +1,20 @@
+md-card{
+  margin-top: 2%;
+}
+
+#linksTable {
+  width: 100%;
+}
+
+.list-items {
+  font-size: 12px;
+}
+
+/*.form-button{
+  width: 100%;
+}*/
+
+.centerButton{
+  width: 50%;
+  margin: 0 auto;
+}
