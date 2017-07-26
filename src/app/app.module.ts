@@ -19,6 +19,8 @@ import { UserConfirmationComponent } from './public/user-confirmation/user-confi
 import {ApiService} from "./services/api.service";
 import {AppService} from "./services/app.service";
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { ToolBarComponent } from './tool-bar/tool-bar.component';
+
 
 
 @NgModule({
@@ -31,6 +33,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     GenerateUrlComponent,
     UserConfirmationComponent,
     DialogIncompleteForm,
+    ToolBarComponent,
 
   ],
   imports: [

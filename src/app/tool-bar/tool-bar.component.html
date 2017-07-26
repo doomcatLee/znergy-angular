@@ -1,0 +1,20 @@
+<md-toolbar>
+  <span>ZNRGY</span>
+  <span class="flex-spacer"></span>
+  <button md-button [mdMenuTriggerFor]="appMenu"><md-icon></md-icon>Menu</button>
+  <button md-button [mdMenuTriggerFor]="userMenu"><md-icon></md-icon>UserNameHere</button><!-- this will only be visable when a user is logged in. -->
+  <button md-button [mdMenuTriggerFor]="loginMenu"><md-icon></md-icon>UserLogin</button>  <!-- this will only be visable when no user is logged in... -->
+</md-toolbar>
+
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu>
+<md-menu #loginMenu="mdMenu">
+  <button md-menu-item> Login </button>
+  <button md-menu-item> Sign Up </button>
+</md-menu>
+<md-menu #userMenu="mdMenu">
+  <button md-menu-item> Logout </button>
+  <button md-menu-item> My Account </button>
+</md-menu>
