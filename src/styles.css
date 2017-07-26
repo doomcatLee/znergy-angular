@@ -7,3 +7,9 @@ body {
 .flex-spacer {
   flex: 1 1 auto;
 }
+.invisButton {
+  text-decoration:none;
+  border:0;
+  outline:none;
+  cursor: pointer;
+}

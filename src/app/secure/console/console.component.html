@@ -1,6 +1,8 @@
 
 
 <md-toolbar>
+               <!-- I think this should be on the tool-bar component but only accesible if signed in -->
+               <!-- Or on the console page we don't show the original ToolBarComponent -->
   <span>ZNRGY</span>
   <span class="example-spacer"></span>
   <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon>Menu</button>
@@ -17,4 +19,3 @@
 <div class="container-createTable">
   <app-generate-url></app-generate-url>
 </div>
-
