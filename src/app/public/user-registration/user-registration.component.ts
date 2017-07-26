@@ -39,8 +39,6 @@ export class UserRegistrationComponent implements OnInit {
     this.subcribeToFormChanges();
   }
 
-
-
   async submitForm(a: string, b: string, c:string, d:string, e:string, f:string) {
     if(this.myForm.valid != true){
       this.dialog.open(DialogIncompleteForm);
@@ -48,14 +46,6 @@ export class UserRegistrationComponent implements OnInit {
       this.appService.setUsername(a); //save username globally using appservice
       this.appService.setEmail(c); //save email globally using appservice
       var output = await this.apiService.registerUser(a,b,c,d,e,f);
-      console.log(output);
-      console.log(output);
-      console.log("username", a);
-      console.log("password", b);
-      console.log('email', c);
-      console.log('phonenumber', d);
-      console.log('first',e);
-      console.log('last',f);
       this.router.navigate(['/userConfirmation']);
     }
   }
