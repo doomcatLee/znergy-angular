@@ -10,7 +10,7 @@ import { routing } from './app.routing';
 import { ConsoleComponent } from './secure/console/console.component';
 import { UserRegistrationComponent } from './public/user-registration/user-registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdInputModule, MdTableModule } from '@angular/material';
+import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdInputModule, MdListModule } from '@angular/material';
 import { GenerateUrlComponent } from './secure/console/generate-url/generate-url.component';
 import { UserConfirmationComponent } from './public/user-confirmation/user-confirmation.component';
 import {ApiService} from "./services/api.service";
@@ -42,7 +42,7 @@ import {AppService} from "./services/app.service";
     MdToolbarModule,
     MdIconModule,
     MdInputModule,
-    MdTableModule
+    MdListModule
   ],
   providers: [
     ApiService,
