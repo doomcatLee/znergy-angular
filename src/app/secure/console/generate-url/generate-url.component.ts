@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+// import {MdGridListModule} from '@angular/material';
+
+export class Link {
+  text: string;
+}
 
 @Component({
   selector: 'app-generate-url',
   templateUrl: './generate-url.component.html',
   styleUrls: ['./generate-url.component.css']
 })
+
 export class GenerateUrlComponent implements OnInit {
-
-  baseUrl = 'https://jxfmonfrfa.execute-api.us-west-2.amazonaws.com/prod/'
-  createTableUrl = 'create-table?';
-
-  createRecordUrl = 'create-item-ddb?';
-  readRecordUrl = 'read-single-record-ddb?';
-  deleteRecordUrl = 'delete-single-record-ddb?'
+  links: Link[] = [];
 
   constructor() { }
 
@@ -20,36 +20,69 @@ export class GenerateUrlComponent implements OnInit {
   }
 
   submitForm(tableName: String, partitionKey: String, sortKey: String) {
-    this.createTable(tableName, partitionKey, sortKey);
-    this.generateURLs(tableName, partitionKey, sortKey);
+    const baseUrl = 'https://jxfmonfrfa.execute-api.us-west-2.amazonaws.com/prod/';
+    const tableIdentifier = 'tableName=' + tableName;
+    const hashKeyIdentifier = 'hashKey=' + partitionKey;
+    const rangeKeyIdentifier = 'rangeKey=' + sortKey;
+
+    this.createTable(baseUrl, tableIdentifier, hashKeyIdentifier, rangeKeyIdentifier);
+    this.generateURLs(baseUrl, tableIdentifier, hashKeyIdentifier, rangeKeyIdentifier);
   }
 
-  createTable(tableName: String, partitionKey: String, sortKey: String) {
-    // TODO: Will need to perform API call to create table in DynamoDB
+  createTable(baseUrl: String, tableIdentifier: String, hashKeyIdentifier: String, rangeKeyIdentifier: String) {
+    const createTableResource = 'create-table-ddb?'
 
     // Create Table
-    const outputUrlCreateTable = this.baseUrl + this.createTableUrl + 'tableName=' + tableName + '&' + 'hashKey=' + partitionKey + '&' + 'rangeKey=' + sortKey;
+    const createTableUrl = baseUrl + createTableResource + tableIdentifier + '&' + hashKeyIdentifier + '&' + rangeKeyIdentifier;
 
-    console.log('Create Table:\n' + outputUrlCreateTable);
+    console.log('Create Table:\n' + createTableUrl);
     console.log('\n');
+
+    // TODO: Will need to perform API call to create table in DynamoDB
   }
 
-  generateURLs(tableName: String, partitionKey: String, sortKey: String){
-    //TODO: Update URL building code after Ryan updates API Gateway
-    // Items in brackets [] to be replaced by actual String/Number values
+  generateURLs(baseUrl: String, tableIdentifier: String, hashKeyIdentifier: String, rangeKeyIdentifier: String){
+    const createRecordResource = 'create-record-ddb?';
+    const readRecordResource = 'read-single-record-ddb?';
+    const readAllRecordsResource = 'read-all-records-ddb?';
+    const updateRecordResource = 'update-record-ddb?';
+    const deleteRecordResource = 'delete-record-ddb?';
 
     // Create Single Record
-    const outputUrlCreateRecord = this.baseUrl + this.createRecordUrl + 'tableName=' + tableName + '&' + 'hashKey=' + partitionKey + '&' + 'rangeKey=' + sortKey + '&' + 'hashValue=' + '[hashValue]' + '&' + 'rangeValue=' + '[rangeValue]';
+    let createRecordUrl: String = baseUrl + createRecordResource + tableIdentifier + '&' + hashKeyIdentifier + '&' + rangeKeyIdentifier + '&' + 'hashValue=' + '[hashValue]' + '&' + 'rangeValue=' + '[rangeValue]';
 
     // Read Single Record
-    const outputUrlReadRecord = this.baseUrl + this.readRecordUrl + 'tableName=' + tableName + + '&' + 'hashKey=' + partitionKey + '&' + 'rangeKey=' + sortKey + '&' + 'rangeValue=' + '[rangeValue]' + '&' + 'hashValue=' + '[hashValue]';
+    let readSingleRecordUrl: String = baseUrl + readRecordResource + tableIdentifier + '&' + hashKeyIdentifier + '&' + rangeKeyIdentifier + '&' + 'hashValue=' + '[hashValue]' + 'rangeValue=' + '[rangeValue]';
+
+    // Read All Records
+    let readAllRecordsUrl: String = baseUrl + readAllRecordsResource + tableIdentifier;
+
+    // Update Single Record
+    let updateRecordUrl: String = baseUrl + updateRecordResource + tableIdentifier + '&' + hashKeyIdentifier + '&' + rangeKeyIdentifier + '&' + 'hashValue=' + '[hashValue]' + 'rangeValue=' + '[rangeValue]';
 
     // Delete Single Record
-    const outputUrlDeleteRecord = this.baseUrl + this.deleteRecordUrl + 'tableName=' + tableName + '&' + 'hashKey=' + partitionKey + '&' + 'hashValue=' + '[hashValue]' + 'rangeKey=' + sortKey + '&' + 'rangeValue=' + '[rangeValue]';
+    let deleteRecordUrl: String = baseUrl + deleteRecordResource + tableIdentifier + '&' + hashKeyIdentifier + '&' + rangeKeyIdentifier + '&' + 'hashValue=' + '[hashValue]' + '&' + 'rangeValue=' + '[rangeValue]';
 
-    console.log('Create Single Record:\n' + outputUrlCreateRecord);
-    console.log('Read Single Record:\n' + outputUrlReadRecord);
-    console.log('Delete Single Record:\n' + outputUrlDeleteRecord);
+    console.log('Create Single Record:\n' + createRecordUrl);
+    console.log('Read Single Record:\n' + readSingleRecordUrl);
+    console.log('Read All Records:\n' + readAllRecordsUrl);
+    console.log('Update Single Record:\n' + updateRecordUrl);
+    console.log('Delete Single Record:\n' + deleteRecordUrl);
+    console.log('');
+
+    let createRecordUrlLink: Link = JSON.parse(JSON.stringify({name: 'Create Record', text: createRecordUrl}));
+    let readSingleRecordUrlLink: Link = JSON.parse(JSON.stringify({name: 'Read Record', text: readSingleRecordUrl}));
+    let readAllRecordsUrlLink: Link = JSON.parse(JSON.stringify({name: 'Read All Records', text: readAllRecordsUrl}));
+    let updateRecordUrlLink: Link = JSON.parse(JSON.stringify({name: 'Update Record', text: updateRecordUrl}));
+    let deleteRecordUrlLink: Link = JSON.parse(JSON.stringify({name: 'Delete Record', text: deleteRecordUrl}));
+
+    this.links.push(createRecordUrlLink);
+    this.links.push(readSingleRecordUrlLink);
+    this.links.push(readAllRecordsUrlLink);
+    this.links.push(updateRecordUrlLink);
+    this.links.push(deleteRecordUrlLink);
+
+    console.log(this.links);
   }
 
 }
