@@ -1,37 +1,11 @@
 
-<!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
-
-    <!-- <md-toolbar color="primary">
-
-        <span>MyCompany</span>
-        <span class="example-spacer"></span>
-        <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
-        <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
-        <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
-        <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
-
-    </md-toolbar> -->
-
-
-
-
-    <md-toolbar layout="row" layout-align="space-between center">
-      <!-- <div class="md-toolbar-tools"> -->
-        <span>ZNRGY</span>
-        <span flex></span>
-          <button md-button [mdMenuTriggerFor]="appMenu"><md-icon></md-icon>Menu</button>
-          <!-- <span flex></span> -->
-          <button md-button [mdMenuTriggerFor]="userMenu"><md-icon></md-icon>UserNameHere</button><!-- this will only be visable when a user is logged in. -->
-          <button md-button [mdMenuTriggerFor]="loginMenu"><md-icon></md-icon>UserLogin</button>  <!-- this will only be visable when no user is logged in... -->
-  </md-toolbar>
-
-  <!-- <md-toolbar layout="row" layout-align="space-between center">
-    <span> <h2 class="md-toolbar-tools"> The Heading </h2></span>
-    <span flex>
-        <md-button aria-label="First Button"> Button1 </md-button>
-        <md-button aria-label="Second Button"> Button2 </md-button>
-    </span>
-</md-toolbar> -->
+    <md-toolbar>
+      <span>ZNRGY</span>
+      <span class="flex-spacer"></span>
+      <button md-button [mdMenuTriggerFor]="appMenu"><md-icon></md-icon>Menu</button>
+      <button md-button [mdMenuTriggerFor]="userMenu"><md-icon></md-icon>UserNameHere</button><!-- this will only be visable when a user is logged in. -->
+      <button md-button [mdMenuTriggerFor]="loginMenu"><md-icon></md-icon>UserLogin</button>  <!-- this will only be visable when no user is logged in... -->
+    </md-toolbar>
 
 <md-menu #appMenu="mdMenu">
   <button md-menu-item> Settings </button>
@@ -45,22 +19,6 @@
   <button md-menu-item> Logout </button>
   <button md-menu-item> My Account </button>
 </md-menu>
-<!-- <md-About #appAbout="mdAbout">
-  <button md-menu-item> Settings </button>
-  <button md-menu-item> Help </button>
-</md-About>
-<md-menu #appServices="mdServices">
-  <button md-menu-item> Settings </button>
-  <button md-menu-item> Help </button>
-</md-menu>
-<md-menu #appPortfolio="mdPortfolio">
-  <button md-menu-item> Settings </button>
-  <button md-menu-item> Help </button>
-</md-menu> -->
-
-
-
-
 
 <div class="jumbotron text-center">
   <h1>Znergy</h1>
@@ -72,6 +30,12 @@
       </div>
     </div>
   </form>
+</div>
+
+<div class="left">
+  <p>test
+  </p>
+
 </div>
 
 <!-- Container (About Section) -->

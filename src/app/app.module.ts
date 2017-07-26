@@ -18,6 +18,8 @@ import { GenerateUrlComponent } from './public/generate-url/generate-url.compone
 import { UserConfirmationComponent } from './public/user-confirmation/user-confirmation.component';
 import {ApiService} from "./services/api.service";
 import {AppService} from "./services/app.service";
+import {FlexLayoutModule} from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import {AppService} from "./services/app.service";
     GenerateUrlComponent,
     UserConfirmationComponent,
     DialogIncompleteForm,
+
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,9 @@ import {AppService} from "./services/app.service";
     MdIconModule,
     MdInputModule,
     MdTableModule,
-    MdDialogModule
+    MdDialogModule,
+    FlexLayoutModule,
+
   ],
   providers: [
     ApiService,
