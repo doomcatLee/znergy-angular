@@ -1,10 +1,18 @@
 md-card{
-  margin-top: 10%;
+  margin-top: 2%;
 }
 
-.form-button{
+#linksTable {
   width: 100%;
 }
+
+.list-items {
+  font-size: 12px;
+}
+
+/*.form-button{
+  width: 100%;
+}*/
 
 .centerButton{
   width: 50%;
