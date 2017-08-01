@@ -19,6 +19,7 @@ import {ApiService} from "./services/api.service";
 import {AppService} from "./services/app.service";
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { ToolBarComponent } from './tool-bar/tool-bar.component';
+import { ZConsoleComponent } from './z-console/z-console.component';
 
 
 
@@ -33,6 +34,7 @@ import { ToolBarComponent } from './tool-bar/tool-bar.component';
     UserConfirmationComponent,
     DialogIncompleteForm,
     ToolBarComponent,
+    ZConsoleComponent,
 
   ],
   imports: [
