@@ -53,6 +53,7 @@ import { ZConsoleComponent } from './z-console/z-console.component';
     MdToolbarModule,
     MdIconModule,
     MdInputModule,
+    MdDialogModule
   ],
   providers: [
     ApiService,
