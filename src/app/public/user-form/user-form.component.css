@@ -113,6 +113,7 @@ label {
   font-size: 20px;
   font-weight: 300;
   margin: 30px;
+  height: auto;
 }
 .panel-login>.panel-heading {
   color: #848c9d;
@@ -225,9 +226,7 @@ label {
   background-color: #2D3B55;
 }
 
-.container-form{
-  margin-top: 10%;
-}
+
 
 .navbar {
   margin-bottom: 0;
@@ -255,4 +254,8 @@ label {
 
 #account{
   float:right;
+}
+
+#login{
+  margin-top: 10%;
 }

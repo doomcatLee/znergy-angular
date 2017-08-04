@@ -1,4 +1,5 @@
-<div class="container-form">
+
+<div id="login" class="container-form">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <div class="panel panel-login">
@@ -14,8 +15,7 @@
                   <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
                 </div>
                 <div class="col-xs-6 form-group pull-left checkbox">
-                  <input id="checkbox1" type="checkbox" name="remember">
-                  <label for="checkbox1">Remember Me</label>
+                  <a routerLink="/userRegistration">Forgot your password?</a>
                 </div>
                 <div class="col-xs-6 form-group pull-right">
                   <input type="submit" name="login-submit" routerLink="/console" (click)="loginUser()" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
@@ -46,7 +46,7 @@
             </div>
           </div>
         </div>
-        <a id="account" routerLink="/userRegistration">Don't have an account?</a>
+        <a id="account" routerLink="/userRegistration">Create an account</a>
       </div>
     </div>
   </div>

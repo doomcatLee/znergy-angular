@@ -1,4 +1,4 @@
-<md-card>
+<md-card id="create">
   <form class="example-form">
     <div class="form-group">
       <md-input-container class="example-full-width">
@@ -19,10 +19,14 @@
   </form>
 </md-card>
 
-<md-card id='linksTable'>
-  <h1>Links</h1>
   <md-list>
-      <md-list-item *ngFor="let link of links"><span class='list-items'>{{link.name}} - {{link.text}}</span>
+      <md-list-item *ngFor="let link of links">
+        <md-card>
+          <span class='list-items'>
+            <div id="big">{{link.name}}</div>
+            <hr/>
+            <div id="small">{{link.text}}</div>
+          </span>
+        </md-card>
       </md-list-item>
   </md-list>
-</md-card>
